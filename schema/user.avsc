@@ -1,0 +1,70 @@
+{
+  "namespace": "com.bawi.avro.model",
+  "type": "record",
+  "name": "User",
+  "fields": [
+    {
+      "name": "name",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "favorite_number",
+      "type": [
+        "int",
+        "null"
+      ],
+      "default": -1
+    },
+    {
+      "name": "favorite_color",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": "yellow"
+    },
+    {
+      "name": "Parent",
+      "type": {
+        "type": "record",
+        "name": "Parent",
+        "fields": [
+          {
+            "name": "name",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "cars",
+      "type": {
+        "type": "array",
+        "items": "string"
+      }
+    },
+    {
+      "name": "Friends",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "Friend",
+          "fields": [
+            {
+              "name": "age",
+              "type": "int"
+            },
+            {
+              "name": "isMarried",
+              "type": "boolean"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
