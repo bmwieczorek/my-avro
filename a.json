@@ -1,0 +1,65 @@
+{
+  "type": "record",
+  "name": "myRecordName",
+  "fields": [
+    {
+      "name": "myRequiredInt",
+      "type": "int"
+    },
+    {
+      "name": "myOptionalDouble",
+      "type": [
+        "null",
+        "double"
+      ],
+      "default": null
+    },
+    {
+      "name": "myNullableString",
+      "type": [
+        "string",
+        "null"
+      ],
+      "default": "myNullableStringDefaultValue"
+    },
+    {
+      "name": "myRequiredArrayLongs",
+      "type": {
+        "type": "array",
+        "items": "long"
+      }
+    },
+    {
+      "name": "myRequiredSubRecord",
+      "type": {
+        "type": "record",
+        "name": "myRequiredSubRecordType",
+        "fields": [
+          {
+            "name": "myRequiredFloat",
+            "type": "float"
+          }
+        ]
+      }
+    },
+    {
+      "name": "myOptionalArraySubRecords",
+      "type": [
+        {
+          "type": "array",
+          "items": {
+            "type": "record",
+            "name": "myOptionalArraySubRecordType",
+            "fields": [
+              {
+                "name": "myRequiredBoolean",
+                "type": "boolean"
+              }
+            ]
+          }
+        },
+        "null"
+      ]
+    }
+  ]
+}
